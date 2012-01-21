@@ -1,0 +1,39 @@
+alias cn='cd ~/Developer/betterbusinessanalysis/canvas'
+alias bj='cd ~/Developer/bjv3'
+alias ec2='cd ~/.ec2'
+alias ohio='cd /Users/FaraazKhan/Developer/experiment/ohio_scales/'
+alias db='mysql.server'
+alias redis="redis-server"
+alias bj_services="bj && db start && passenger start"
+# apple script to start redis in a separate window
+alias start_bj='osascript /Users/FaraazKhan/Work/DCPS/Files/start_bj.scpt'
+alias redis-stop='killall -SIGTERM redis-server 2>/dev/null'
+alias kill_db='killall -SIGTERM mysqld 2>/dev/null'
+alias stop_bj='passenger stop && db stop && redis-stop'
+
+#Functions to copy and fetch files from remote
+function backup_file()
+{
+ scp $1 faraaz@rationalizeitconsulting.com:/home/faraaz/backup/;
+}
+
+function backup_folder()
+{
+  scp -r $1 faraaz@rationalizeitconsulting.com:/home/faraaz/backup/Work/;
+}
+
+function get_file()
+{
+  scp faraaz@rationalizeitconsulting.com:/$1 ~/Downloads/;
+}
+
+function get_folder()
+{
+  scp -r faraaz@rationalizeit.com:/$1 ~/Downloads/;
+}
+# Set up Amazon EC2 Command Line Tools
+export EC2_HOME=~/.ec2
+export PATH=$PATH:$EC2_HOME/bin
+export EC2_PRIVATE_KEY=`ls $EC2_HOME/pk-*.pem`
+export EC2_CERT=`ls $EC2_HOME/cert-*.pem`
+export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home

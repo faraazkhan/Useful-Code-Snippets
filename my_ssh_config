@@ -1,0 +1,28 @@
+#Host sho
+#HostName 164.82.149.148
+#User CEuser
+#
+Host myserver
+HostName "rationalizeitconsulting.com"
+User faraaz
+
+Host integration
+HostName "dcps-node2.codesherpas.com"
+User fkhan
+IdentityFile ~/.ssh/id_rsa.pub
+PubKeyAuthentication=yes
+
+#Host *
+#PubKeyAuthentication=no
+
+#Host amazon
+#HostName "107.21.100.207"
+#User root
+#IdentityFile ~/.ssh/myami.pem
+
+#Host image
+#HostName "ec2-107-21-143-236.compute-1.amazonaws.com"
+#User root
+#IdentityFile ~/.ssh/rationalizeit.pem
+
+
